@@ -3,3 +3,9 @@
 ################################################################################
 
 /Ocelot/.vs
+/Ocelot/GoodAPI/bin/Debug/netcoreapp2.1
+/Ocelot/GoodAPI/obj
+/Ocelot/OcelotGateWay/bin/Debug/netcoreapp2.1
+/Ocelot/OcelotGateWay/obj
+/Ocelot/OrderAPI/bin/Debug/netcoreapp2.1
+/Ocelot/OrderAPI/obj
