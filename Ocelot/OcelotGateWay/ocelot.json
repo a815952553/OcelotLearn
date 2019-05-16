@@ -22,6 +22,11 @@
   ],
   "Aggregates": [],
   "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 9500,
+      "ConfigurationKey": "Oceolot_A"
+    },
     "RequestIdKey": null,
     "RateLimitOptions": {
       "ClientIdHeader": "ClientId",

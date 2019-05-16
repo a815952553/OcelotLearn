@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
 
 namespace OcelotGateWay
 {
@@ -29,7 +30,8 @@ namespace OcelotGateWay
         {
             services.AddOcelot(new ConfigurationBuilder()
                     .AddJsonFile("ocelot.json")
-                    .Build());
+                    .Build())
+                    .AddConsul().AddConfigStoredInConsul();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
