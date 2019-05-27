@@ -31,7 +31,7 @@ namespace OcelotGateWay
             services.AddOcelot(new ConfigurationBuilder()
                     .AddJsonFile("ocelot.json")
                     .Build())
-                    .AddConsul().AddConfigStoredInConsul();
+                    .AddConsul();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

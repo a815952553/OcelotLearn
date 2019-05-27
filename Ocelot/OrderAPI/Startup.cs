@@ -29,7 +29,7 @@ namespace OrderAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime lifetime)
         {
             if (env.IsDevelopment())
             {
@@ -40,8 +40,14 @@ namespace OrderAPI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
+            ServiceEntity entity = new ServiceEntity();
+            entity.ConsulIP = "127.0.0.1";
+            entity.ConsulPort = Convert.ToInt32(Configuration["Consul:Port"]) ;
+            entity.IP = "127.0.0.1";
+            entity.Port = Convert.ToInt32(Configuration["Service:Port"]);
+            entity.ServiceName = Configuration["Service:Name"];
+            app.RegisterConsul(lifetime, entity);
         }
     }
 }

@@ -1,33 +1,13 @@
 {
-  "ReRoutes": [
-    {
-      "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 44326
-        },
-        {
-          "Host": "localhost",
-          "Port": 44360
-        }
-      ],
-      "UpstreamPathTemplate": "/api/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post" ],
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin"
-      }
-    }
-  ],
+  "ReRoutes": [],
   "Aggregates": [],
   "GlobalConfiguration": {
+    "RequestIdKey": null,
     "ServiceDiscoveryProvider": {
       "Host": "localhost",
-      "Port": 9500,
-      "ConfigurationKey": "Oceolot_A"
+      "Port": 8500,
+      "Type": "Consul"
     },
-    "RequestIdKey": null,
     "RateLimitOptions": {
       "ClientIdHeader": "ClientId",
       "QuotaExceededMessage": null,
